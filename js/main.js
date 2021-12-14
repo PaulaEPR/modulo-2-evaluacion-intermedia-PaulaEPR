@@ -79,7 +79,7 @@ function addScore() {
   }
 }
 
-//Contador de partidas
+
 
 //Manejador del listener del botón
 function handleBtnClick(event) {
@@ -87,7 +87,6 @@ function handleBtnClick(event) {
   getWinner()
   addScore()
 }
-
 
 //Listener para el botón
 btn.addEventListener("click", handleBtnClick)
