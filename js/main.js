@@ -69,7 +69,7 @@ function getWinner() {
 }
 
 //Pintar en el HTML
-function addCounter() {
+function addScore() {
   let playerHTML = parseInt(player.innerHTML)
   let computerHTML = parseInt(computer.innerHTML)
   if (result.innerHTML === "¡Has ganado!") {
@@ -79,11 +79,13 @@ function addCounter() {
   }
 }
 
+//Contador de partidas
+
 //Manejador del listener del botón
 function handleBtnClick(event) {
   event.preventDefault()
   getWinner()
-  addCounter()
+  addScore()
 }
 
 
