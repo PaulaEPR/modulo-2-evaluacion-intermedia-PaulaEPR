@@ -48,8 +48,6 @@ function getMovesComputer() {
   return moveComputer
 }
 
-
-
 //Guardar las dos jugadas
 function getWinner() {
   let movePlayer = getMovesPlayer()
@@ -70,10 +68,22 @@ function getWinner() {
   }
 }
 
+//Pintar en el HTML
+function addCounter() {
+  let playerHTML = parseInt(player.innerHTML)
+  let computerHTML = parseInt(computer.innerHTML)
+  if (result.innerHTML === "¡Has ganado!") {
+    player.innerHTML = playerHTML + 1
+  } else if (result.innerHTML === "¡Has perdido!") {
+    computer.innerHTML = computerHTML + 1
+  }
+}
+
 //Manejador del listener del botón
 function handleBtnClick(event) {
   event.preventDefault()
   getWinner()
+  addCounter()
 }
 
 
