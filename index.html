@@ -5,9 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>Piedra, papel o tijera</title>
+    <title>Piedra, papel y tijera</title>
   </head>
   <body>
+    <h1 class="title">Juego Piedra, Papel y Tijera</h1>
+    <form action="" class="form">
+      <h2 class="subtitle">Introduce aquí tu jugada:</h2>
+      <select class="form__select" name="" id="">
+        <option selected hidden>Seleccione aquí su jugada</option>
+        <option value="rock">Piedra</option>
+        <option value="paper">Papel</option>
+        <option value="scissors">Tijeras</option>
+      </select>
+      <button type="submit">Jugar</button>
+    </form>
+    <section class="counter">
+      <p class="counter__result">¡Vamos a jugar!</p>
+      <article class="counter__status">
+        <p class="counter__status--player">Jugador:</p>
+        <p class="counter__status--computer">Ordenador:</p>
+      </article>
+    </section>
     <script type="text/javascript" src="./js/main.js"></script>
   </body>
 </html>
