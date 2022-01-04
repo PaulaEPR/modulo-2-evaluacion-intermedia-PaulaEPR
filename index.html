@@ -12,16 +12,18 @@
     <form action="" class="form">
       <h2 class="subtitle">Introduce aquí tu jugada:</h2>
       <select class="form__select js-select" name="select" id="select">
-        <option value="no" selected hidden>Seleccione aquí su jugada</option>
+        <option value="no-move" selected hidden>Selecciona tu jugada</option>
         <option value="rock">Piedra</option>
         <option value="paper">Papel</option>
         <option value="scissors">Tijeras</option>
       </select>
-      <button type="submit" class="btn js-btn">Jugar</button>
+      <button type="submit" class="btn js-btn-submit">Jugar</button>
+      <button type="reset" class="btn js-btn-reset hidden">Reiniciar</button>
     </form>
     <section class="counter">
       <p class="counter__result js-result">¡Vamos a jugar!</p>
       <article class="counter__status">
+        <h2 class="subtitle">Contador:</h2>
         <p class="counter__status--player">
           Jugador:
           <span class="js-player">0</span>
@@ -29,6 +31,10 @@
         <p class="counter__status--computer">
           Ordenador:
           <span class="js-computer">0</span>
+        </p>
+        <p class="counter__status--games">
+          Partidas:
+          <span class="js-games">0</span>
         </p>
       </article>
     </section>
