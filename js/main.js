@@ -54,11 +54,11 @@ function getWinner() {
 function addScore() {
   let playerHTML = parseInt(player.innerHTML);
   let computerHTML = parseInt(computer.innerHTML);
-  games.innerHTML = guessCount;
+  addHTML(games, guessCount);
   if (result.innerHTML === 'Jugada: ¡Has ganado!') {
-    player.innerHTML = playerHTML + 1;
+    addHTML(player, playerHTML + 1)
   } else if (result.innerHTML === 'Jugada: ¡Has perdido!') {
-    computer.innerHTML = computerHTML + 1;
+    addHTML(computer, computerHTML + 1)
   }
 }
 
@@ -92,10 +92,10 @@ function listenerBtnDisabled() {
 function handleBtnResetClick(event) {
   event.preventDefault();
   guessCount = 0;
-  player.innerHTML = 0;
-  computer.innerHTML = 0;
-  games.innerHTML = 0;
-  result.innerHTML = '¡Vamos a jugar!';
+  addHTML(player, 0)
+  addHTML(computer, 0)
+  addHTML(games, 0)
+  addHTML(result, '¡Vamos a jugar!')
   btnSubmit.classList.remove('hidden');
   btnReset.classList.add('hidden');
 }
@@ -130,13 +130,18 @@ function getRandomNumber(max) {
 
 //If the player didn't select the move
 function alertPlayer() {
-  result.innerHTML = 'Selecciona una opción por favor';
+  addHTML(result, 'Selecciona una opción por favor')
 }
 
 //Add result and counter
 function addResult(text) {
-  result.innerHTML = text;
+  addHTML(result, text)
   guessCount++;
+}
+
+//Paint in the HTML
+function addHTML(where, text) {
+  where.innerHTML = text
 }
 
 //End the game
@@ -146,11 +151,11 @@ function endGame() {
   let countPlayer = parseInt(player.innerHTML);
   let countComputer = parseInt(computer.innerHTML);
   if (countPlayer > countComputer) {
-    result.innerHTML = '¡Partida ganada!';
-  } else if ((countPlayer = countComputer)) {
-    result.innerHTML = '¡Partida empatada!';
+    addHTML(result, '¡Partida ganada!')
+  } else if ((countPlayer === countComputer)) {
+    addHTML(result, '¡Partida empatada!')
   } else {
-    result.innerHTML = '¡Partida perdida!';
+    addHTML(result, '¡Partida perdida!')
   }
 }
 
